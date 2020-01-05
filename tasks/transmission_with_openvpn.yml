@@ -30,8 +30,8 @@
       - "{{ books_root }}:/books:rw"
       - "{{ audiobooks_root }}:/audiobooks:rw"
     ports:
-      - "9093:9091"
-      - "51415:51413"
+      - "{{ transmission_openvpn_webui_port }}:9091"
+      - "{{ transmission_openvpn_external_port }}:51413"
     env:
       TRANSMISSION_HOME: "/config"
       TRANSMISSION_DOWNLOAD_DIR: "/storage/downloads/complete"
@@ -55,4 +55,4 @@
       traefik.backend: "transmission-openvpn"
       traefik.frontend.rule: "Host:transmission-openvpn.{{ ansible_nas_domain }}"
       traefik.enable: "{{ transmission_with_openvpn_available_externally }}"
-      traefik.port: "9093"
+      traefik.port: "{{ transmission_openvpn_webui_port }}"
