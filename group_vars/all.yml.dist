@@ -254,7 +254,7 @@ samba_shares:
     writable: "yes"
     browsable: "yes"
     path: "{{ samba_shares_root }}/audiobooks"
-	
+
   - name: comics
     comment: 'Comics'
     guest_ok: yes
