@@ -510,6 +510,8 @@ lidarr_downloads_directory: "{{ downloads_root }}"
 lidarr_user_id: "0"
 lidarr_group_id: "0"
 lidarr_image: "linuxserver/lidarr"
+lidarr_port: "8686"
+
 
 ###
 ### Couchpotato
@@ -842,3 +844,5 @@ ubooquity_data_directory: "{{ docker_home }}/ubooquity"
 ubooquity_user_id: "0"
 ubooquity_group_id: "0"
 ubooquity_image: "linuxserver/ubooquity:latest"
+ubooquity_port_a: "2202"
+ubooquity_port_b: "2203"
