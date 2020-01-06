@@ -95,7 +95,6 @@ ubooquity_enabled: false
 
 # Joomla
 joomla_enabled: false
-joomla_image: "joomla"
 
 ###
 ### General
@@ -353,6 +352,7 @@ heimdall_port_https: "10443"
 ### Transmission
 ###
 transmission_available_externally: "false"
+transmission_with_openvpn_available_externally: "false"
 transmission_config_directory: "{{ docker_home }}/transmission/config"
 transmission_download_directory: "{{ downloads_root }}"
 transmission_watch_directory: "{{ torrents_root }}"
@@ -419,7 +419,6 @@ plex_group_id: "0"
 plex_image: "linuxserver/plex"
 plex_port: "32400"
 
-
 ###
 ### Homebridge
 ###
@@ -446,7 +445,6 @@ emby_group_id: "0"
 emby_image: "emby/embyserver"
 emby_port_http: "8096"
 emby_port_https: "8920"
-
 
 ###
 ### Tautulli
@@ -491,7 +489,6 @@ radarr_group_id: "0"
 radarr_image: "linuxserver/radarr"
 radarr_port: "7878"
 
-
 ###
 ### Bazarr
 ###
@@ -513,6 +510,7 @@ lidarr_music_directory: "{{ music_root }}"
 lidarr_downloads_directory: "{{ downloads_root }}"
 lidarr_user_id: "0"
 lidarr_group_id: "0"
+lidarr_image: "linuxserver/lidarr"
 
 ###
 ### Couchpotato
@@ -546,6 +544,7 @@ ombi_available_externally: "false"
 ombi_config_directory: "{{ docker_home }}/ombi/config"
 ombi_user_id: "0"
 ombi_group_id: "0"
+ombi_image: "linuxserver/ombi"
 
 ###
 ### Netdata
@@ -843,3 +842,4 @@ ubooquity_available_externally: "false"
 ubooquity_data_directory: "{{ docker_home }}/ubooquity"
 ubooquity_user_id: "0"
 ubooquity_group_id: "0"
+ubooquity_image: "linuxserver/ubooquity:latest"
