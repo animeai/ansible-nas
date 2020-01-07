@@ -347,6 +347,7 @@ heimdall_docker_image: linuxserver/heimdall:latest
 heimdall_data_directory: "{{ docker_home }}/heimdall"
 heimdall_port_http: "10080"
 heimdall_port_https: "10443"
+heimdall_subdomain: "heimdall"
 
 ###
 ### Transmission
@@ -361,6 +362,7 @@ transmission_local_network: "192.168.1.0/24"
 transmission_image: "linuxserver/transmission"
 transmission_webui_port: "9092"
 transmission_external_port: "51414"
+transmission_subdomain: "transmission"
 
 ###
 ### Transmission with OpenVPN
@@ -375,6 +377,7 @@ transmission_openvpn_local_network: "192.168.1.0/24"
 transmission_openvpn_image: "haugene/transmission-openvpn"
 transmission_openvpn_webui_port: "9093"
 transmission_openvpn_external_port: "51415"
+transmission_openvpn_subdomain: "transmission-openvpn"
 
 ###
 ### Joomla
@@ -384,7 +387,7 @@ joomla_available_externally: "false"
 joomla_database_password: top_secret
 joomla_image: "joomla"
 joomla_port: "8181"
-
+joomla_subdomain: "joomla"
 
 ###
 ### pyLoad
@@ -396,6 +399,7 @@ pyload_user_id: "0"
 pyload_group_id: "0"
 pyload_image: "writl/pyload"
 pyload_port: "8000"
+pyload_subdomain: "pyload"
 
 ###
 ### Plex
@@ -417,6 +421,7 @@ plex_user_id: "0"
 plex_group_id: "0"
 plex_image: "linuxserver/plex"
 plex_port: "32400"
+plex_subdomain: "plex"
 
 ###
 ### Homebridge
@@ -427,6 +432,7 @@ homebridge_user_id: "0"
 homebridge_group_id: "0"
 homebridge_image: "oznu/homebridge"
 homebridge_port: "8087"
+homebridge_subdomain: "homebridge"
 
 ###
 ### Emby
@@ -444,6 +450,7 @@ emby_group_id: "0"
 emby_image: "emby/embyserver"
 emby_port_http: "8096"
 emby_port_https: "8920"
+emby_subdomain: "emby"
 
 ###
 ### Tautulli
@@ -454,7 +461,7 @@ tautulli_user_id: "0"
 tautulli_group_id: "0"
 tautulli_image: "linuxserver/tautulli"
 tautulli_port: "8185"
-
+tautulli_subdomain: "tautulli"
 
 ###
 ### Duplicati
@@ -463,6 +470,7 @@ duplicati_available_externally: "false"
 duplicati_data_directory: "{{ docker_home }}/duplicati/config"
 duplicati_image: "linuxserver/duplicati"
 duplicati_port: "8200"
+duplicati_subdomain: "duplicati"
 
 ###
 ### Sonarr
@@ -475,6 +483,7 @@ sonarr_user_id: "0"
 sonarr_group_id: "0"
 sonarr_image: "linuxserver/sonarr"
 sonarr_port: "8989"
+sonarr_subdomain: "sonarr"
 
 ###
 ### Radarr
@@ -487,6 +496,7 @@ radarr_user_id: "0"
 radarr_group_id: "0"
 radarr_image: "linuxserver/radarr"
 radarr_port: "7878"
+radarr_subdomain: "radarr"
 
 ###
 ### Bazarr
@@ -499,6 +509,7 @@ bazarr_user_id: "0"
 bazarr_group_id: "0"
 bazarr_image: "linuxserver/bazarr"
 bazarr_port: "6767"
+bazarr_subdomain: "bazarr"
 
 ###
 ### lidarr
@@ -511,7 +522,7 @@ lidarr_user_id: "0"
 lidarr_group_id: "0"
 lidarr_image: "linuxserver/lidarr"
 lidarr_port: "8686"
-
+lidarr_subdomain: "lidarr"
 
 ###
 ### Couchpotato
@@ -525,6 +536,7 @@ couchpotato_user_id: "0"
 couchpotato_group_id: "0"
 couchpotato_image: "linuxserver/couchpotato"
 couchpotato_port: "5050" 
+couchpotato_subdomain: "couchpotato"
 
 ###
 ### Sickchill
@@ -537,6 +549,7 @@ sickchill_user_id: "0"
 sickchill_group_id: "0"
 sickchill_image: "linuxserver/sickchill"
 sickchill_port: "8081"
+sickchill_subdomain: "sickchill"
 
 ###
 ### Ombi
@@ -546,6 +559,7 @@ ombi_config_directory: "{{ docker_home }}/ombi/config"
 ombi_user_id: "0"
 ombi_group_id: "0"
 ombi_image: "linuxserver/ombi"
+ombi_subdomain: "ombi"
 
 ###
 ### Netdata
@@ -553,6 +567,7 @@ ombi_image: "linuxserver/ombi"
 netdata_available_externally: "false"
 netdata_image: "netdata/netdata"
 netdata_port: "19999"
+netdata_subdomain: "netdata"
 
 ###
 ### OpenVPN
@@ -567,6 +582,7 @@ portainer_available_externally: "false"
 portainer_data_directory: "{{ docker_home }}/portainer/config"
 portainer_image: "portainer/portainer"
 portainer_port: "9000"
+portainer_subdomain: "portainer"
 
 ###
 ### ZNC
@@ -577,6 +593,7 @@ znc_user_id: "0"
 znc_group_id: "0"
 znc_image: "znc"
 znc_port: "6677"
+znc_subdomain: "znc"
 
 ###
 ### Stats
@@ -590,6 +607,7 @@ grafana_image: "grafana/grafana"
 telegraf_image: "telegraf"
 grafana_influxdb_port: "8086"
 grafana_port: "3000"
+grafana_subdomain: "grafana"
 
 ###
 ### Gitea
@@ -599,6 +617,7 @@ gitea_data_directory: "{{ docker_home }}/gitea"
 gitea_image: "gitea/gitea:latest"
 gitea_port_http: "3001"
 gitea_port_ssh: "222"
+gitea_subdomain: "gitea"
 
 ###
 ### Glances
@@ -607,6 +626,7 @@ glances_available_externally: "false"
 glances_image: "nicolargo/glances"
 glances_port_one: "61208"
 glances_port_two: "61209"
+glances_subdomain: "glances"
 
 ###
 ### Nextcloud
@@ -615,6 +635,7 @@ nextcloud_available_externally: "false"
 nextcloud_data_directory: "{{ docker_home }}/nextcloud"
 nextcloud_image: "nextcloud:14"
 nextcloud_port: "8080"
+nextcloud_subdomain: "nextcloud"
 
 ###
 ### nginx
@@ -632,6 +653,7 @@ guacamole_docker_image: guacamole/guacamole:0.9.14
 guacamole_guacd_docker_image: guacamole/guacd:0.9.14
 guacamole_data_directory: "{{ docker_home }}/guacamole"
 guacamole_port: "8090"
+guacamole_subdomain: "guacamole"
 
 ###
 ### Miniflux
@@ -642,6 +664,7 @@ miniflux_admin_username: admin
 miniflux_admin_password: supersecure
 miniflux_image: "miniflux/miniflux:latest"
 miniflux_port: "8070"
+miniflux_subdomain: "miniflux"
 
 ###
 ### Airsonic
@@ -650,6 +673,7 @@ airsonic_available_externally: "false"
 airsonic_data_directory: "{{ docker_home }}/airsonic"
 airsonic_image: "airsonic/airsonic:latest"
 airsonic_port: "4040"
+airsonic_subdomain: "airsonic"
 
 ###
 ### CloudCmd
@@ -661,6 +685,7 @@ cloudcmd_user_id: "0"
 cloudcmd_group_id: "0"
 cloudcmd_image: "coderaiser/cloudcmd"
 cloudcmd_port: "7373"
+cloudcmd_subdomain: "cloudcmd"
 
 ###
 ### Watchtower
@@ -705,9 +730,11 @@ minidlna_port: "8201"
 ###
 ### get_iplayer
 ###
+get_iplayer_avaliable_externally: "false"
 get_iplayer_config_directory: "{{ docker_home }}/get_iplayer"
 get_iplayer_download_directory: "{{ tv_root }}/iplayer_downloads"
 get_iplayer_image: "kolonuk/get_iplayer"
+get_iplayer_subdomain: "get_iplayer"
 get_iplayer_port: "8182"
 
 ###
@@ -724,6 +751,7 @@ jackett_available_externally: "false"
 jackett_data_directory: "{{ docker_home }}/jackett"
 jackett_image: "linuxserver/jackett"
 jackett_port: "9117"
+jackett_subdomain: "jackett"
 
 ###
 ### The Lounge
@@ -733,6 +761,7 @@ thelounge_data_directory: "{{ docker_home }}/thelounge"
 thelounge_image: "thelounge/thelounge:latest"
 thelounge_port_one: "113"
 thelounge_port_two: "9002"
+thelounge_subdomain: "thelounge"
 
 ###
 ### Bitwarden
@@ -743,6 +772,7 @@ bitwarden_image: "mprasil/bitwarden:latest"
 bitwarden_backup_image: "bruceforce/bw_backup:latest"
 bitwarden_port_a: "19080"
 bitwarden_port_b: "3012"
+bitwarden_subdomain: "bitwarden"
 
 # Keep this token secret, this is password to access admin area of your server!
 # This token can be anything, but it's recommended to use a long, randomly generated string of characters,
@@ -761,6 +791,7 @@ firefly_available_externally: "false"
 firefly_data_directory: "{{ docker_home }}/firefly"
 firefly_image: "jc5x/firefly-iii:latest"
 firefly_port: "8066"
+firefly_subdomain: "firefly"
 
 ###
 ### Nzbget
@@ -772,6 +803,7 @@ nzbget_user_id: "0"
 nzbget_group_id: "0"
 nzbget_image: "linuxserver/nzbget"
 nzbget_port: "6789"
+nzbget_subdomain: "nzbget"
 
 ###
 ### Wallabag
@@ -780,6 +812,7 @@ wallabag_available_externally: "false"
 wallabag_data_directory: "{{ docker_home }}/wallabag"
 wallabag_image: "wallabag/wallabag:latest"
 wallabag_port: "7780"
+wallabag_subdomain: "wallabag"
 
 ###
 ### Mosquitto
@@ -799,6 +832,7 @@ calibre_image: "linuxserver/calibre-web:latest"
 calibre_user_id: "0"
 calibre_group_id: "0"
 calibre_port: "8084"
+calibre_subdomain: "calibre"
 # To disable ebook conversion set calibre_ebook_conversion to "". To enable it set it to "linuxserver/calibre-web:calibre"
 calibre_ebook_conversion: "linuxserver/calibre-web:calibre"
 
@@ -809,6 +843,7 @@ homeassistant_available_externally: "false"
 homeassistant_data_directory: "{{ docker_home }}/homeassistant"
 homeassistant_image: "homeassistant/home-assistant"
 homeassistant_port: "8123"
+homeassistant_subdomain: "homeassistant"
 
 ###
 ### openHAB
@@ -818,6 +853,7 @@ openhab_docker_image: openhab/openhab:latest
 openhab_data_directory: "{{ docker_home }}/openhab"
 openhab_port_http: "7777"
 openhab_port_https: "7778"
+openhab_subdomain: "openhab"
 
 ###
 ### Jellyfin
@@ -835,6 +871,7 @@ jellyfin_group_id: "0"
 jellyfin_image: "linuxserver/jellyfin"
 jellyfin_port_http: "8896"
 jellyfin_port_https: "8928"
+jellyfin_subdomain: "jellyfin"
 
 ###
 ### Ubooquity
@@ -846,3 +883,4 @@ ubooquity_group_id: "0"
 ubooquity_image: "linuxserver/ubooquity:latest"
 ubooquity_port_a: "2202"
 ubooquity_port_b: "2203"
+ubooquity_subdomain: "ubooquity"
