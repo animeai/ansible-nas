@@ -294,6 +294,8 @@ cloudflare_api_key: abcdeabcdeabcdeabcde1234512345
 
 # Container Settings (You shouldn't need to edit these unless you need to fine tune the container)
 cloudflare_image: "joshava/cloudflare-ddns:latest"
+cloudflare_restart_policy: "unless-stopped"
+cloudflare_memory_limit: "512MB"
 
 ##################################################################
 ###### You shouldn't need to edit anything below this point ######
@@ -338,6 +340,8 @@ samba_netbios_name: "{{ ansible_nas_hostname }}"
 traefik_docker_image: traefik:v1.7
 traefik_data_directory: "{{ docker_home }}/traefik"
 traefik_debug: "false"
+traefik_restart_policy: "unless-stopped"
+traefik_memory_limit: "1g"
 
 ###
 ### Heimdall
@@ -348,6 +352,8 @@ heimdall_data_directory: "{{ docker_home }}/heimdall"
 heimdall_port_http: "10080"
 heimdall_port_https: "10443"
 heimdall_subdomain: "heimdall"
+heimdall_restart_policy: "unless-stopped"
+heimdall_memory_limit: "1g"
 
 ###
 ### Transmission
@@ -363,6 +369,8 @@ transmission_image: "linuxserver/transmission"
 transmission_webui_port: "9092"
 transmission_external_port: "51414"
 transmission_subdomain: "transmission"
+transmission_restart_policy: "unless-stopped"
+transmission_memory_limit: "1g"
 
 ###
 ### Transmission with OpenVPN
@@ -378,6 +386,8 @@ transmission_openvpn_image: "haugene/transmission-openvpn"
 transmission_openvpn_webui_port: "9093"
 transmission_openvpn_external_port: "51415"
 transmission_openvpn_subdomain: "transmission-openvpn"
+transmission_openvpn_restart_policy: "unless-stopped"
+transmission_openvpn_memory_limit: "1g"
 
 ###
 ### Joomla
@@ -388,6 +398,8 @@ joomla_database_password: top_secret
 joomla_image: "joomla"
 joomla_port: "8181"
 joomla_subdomain: "joomla"
+joomla_restart_policy: "unless-stopped"
+joomla_memory_limit: "1g"
 
 ###
 ### pyLoad
@@ -400,6 +412,8 @@ pyload_group_id: "0"
 pyload_image: "writl/pyload"
 pyload_port: "8000"
 pyload_subdomain: "pyload"
+pyload_restart_policy: "unless-stopped"
+pyload_memory_limit: "1g"
 
 ###
 ### Plex
@@ -422,6 +436,8 @@ plex_group_id: "0"
 plex_image: "linuxserver/plex"
 plex_port: "32400"
 plex_subdomain: "plex"
+plex_restart_policy: "unless-stopped"
+plex_memory_limit: "1g"
 
 ###
 ### Homebridge
@@ -433,6 +449,8 @@ homebridge_group_id: "0"
 homebridge_image: "oznu/homebridge"
 homebridge_port: "8087"
 homebridge_subdomain: "homebridge"
+homebridge_restart_policy: "unless-stopped"
+homebridge_memory_limit: "1g"
 
 ###
 ### Emby
@@ -451,6 +469,8 @@ emby_image: "emby/embyserver"
 emby_port_http: "8096"
 emby_port_https: "8920"
 emby_subdomain: "emby"
+emby_restart_policy: "unless-stopped"
+emby_memory_limit: "1g"
 
 ###
 ### Tautulli
@@ -462,6 +482,8 @@ tautulli_group_id: "0"
 tautulli_image: "linuxserver/tautulli"
 tautulli_port: "8185"
 tautulli_subdomain: "tautulli"
+tautulli_restart_policy: "unless-stopped"
+tautulli_memory_limit: "1g"
 
 ###
 ### Duplicati
@@ -471,6 +493,8 @@ duplicati_data_directory: "{{ docker_home }}/duplicati/config"
 duplicati_image: "linuxserver/duplicati"
 duplicati_port: "8200"
 duplicati_subdomain: "duplicati"
+duplicati_restart_policy: "unless-stopped"
+duplicati_memory_limit: "1g"
 
 ###
 ### Sonarr
@@ -484,6 +508,8 @@ sonarr_group_id: "0"
 sonarr_image: "linuxserver/sonarr"
 sonarr_port: "8989"
 sonarr_subdomain: "sonarr"
+sonarr_restart_policy: "unless-stopped"
+sonarr_memory_limit: "1g"
 
 ###
 ### Radarr
@@ -497,6 +523,8 @@ radarr_group_id: "0"
 radarr_image: "linuxserver/radarr"
 radarr_port: "7878"
 radarr_subdomain: "radarr"
+radarr_restart_policy: "unless-stopped"
+radarr_memory_limit: "1g"
 
 ###
 ### Bazarr
@@ -510,6 +538,8 @@ bazarr_group_id: "0"
 bazarr_image: "linuxserver/bazarr"
 bazarr_port: "6767"
 bazarr_subdomain: "bazarr"
+bazarr_restart_policy: "unless-stopped"
+bazarr_memory_limit: "1g"
 
 ###
 ### lidarr
@@ -523,6 +553,8 @@ lidarr_group_id: "0"
 lidarr_image: "linuxserver/lidarr"
 lidarr_port: "8686"
 lidarr_subdomain: "lidarr"
+lidarr_restart_policy: "unless-stopped"
+lidarr_memory_limit: "1g"
 
 ###
 ### Couchpotato
@@ -537,6 +569,8 @@ couchpotato_group_id: "0"
 couchpotato_image: "linuxserver/couchpotato"
 couchpotato_port: "5050" 
 couchpotato_subdomain: "couchpotato"
+couchpotato_restart_policy: "unless-stopped"
+couchpotato_memory_limit: "1g"
 
 ###
 ### Sickchill
@@ -550,6 +584,8 @@ sickchill_group_id: "0"
 sickchill_image: "linuxserver/sickchill"
 sickchill_port: "8081"
 sickchill_subdomain: "sickchill"
+sickchill_restart_policy: "unless-stopped"
+sickchill_memory_limit: "1g"
 
 ###
 ### Ombi
@@ -560,6 +596,8 @@ ombi_user_id: "0"
 ombi_group_id: "0"
 ombi_image: "linuxserver/ombi"
 ombi_subdomain: "ombi"
+ombi_restart_policy: "unless-stopped"
+ombi_memory_limit: "1g"
 
 ###
 ### Netdata
@@ -568,12 +606,16 @@ netdata_available_externally: "false"
 netdata_image: "netdata/netdata"
 netdata_port: "19999"
 netdata_subdomain: "netdata"
+netdata_restart_policy: "unless-stopped"
+netdata_memory_limit: "1g"
 
 ###
 ### OpenVPN
 ###
 openvpn_config_directory: "{{ docker_home }}/openvpn"
 openvpn_client_image: "dceschmidt/openvpn-client"
+openvpn_restart_policy: "unless-stopped"
+openvpn_memory_limit: "1g"
 
 ###
 ### Portainer
@@ -583,6 +625,8 @@ portainer_data_directory: "{{ docker_home }}/portainer/config"
 portainer_image: "portainer/portainer"
 portainer_port: "9000"
 portainer_subdomain: "portainer"
+portainer_restart_policy: "unless-stopped"
+portainer_memory_limit: "1g"
 
 ###
 ### ZNC
@@ -594,6 +638,8 @@ znc_group_id: "0"
 znc_image: "znc"
 znc_port: "6677"
 znc_subdomain: "znc"
+znc_restart_policy: "unless-stopped"
+znc_memory_limit: "1g"
 
 ###
 ### Stats
@@ -608,6 +654,12 @@ telegraf_image: "telegraf"
 grafana_influxdb_port: "8086"
 grafana_port: "3000"
 grafana_subdomain: "grafana"
+stats_influxdb_restart_policy: "unless-stopped"
+stats_influxdb_memory_limit: "1g"
+telegraf_restart_policy: "unless-stopped"
+telegraf_memory_limit: "1g"
+grafana_restart_policy: "unless-stopped"
+grafana_memory_limit: "1g"
 
 ###
 ### Gitea
@@ -618,6 +670,10 @@ gitea_image: "gitea/gitea:latest"
 gitea_port_http: "3001"
 gitea_port_ssh: "222"
 gitea_subdomain: "gitea"
+gitea_restart_policy: "unless-stopped"
+gitea_memory_limit: "1g"
+gitea_mysql_restart_policy: "unless-stopped"
+gitea_mysql_memory_limit: "1g"
 
 ###
 ### Glances
@@ -627,6 +683,8 @@ glances_image: "nicolargo/glances"
 glances_port_one: "61208"
 glances_port_two: "61209"
 glances_subdomain: "glances"
+glances_restart_policy: "unless-stopped"
+glances_memory_limit: "1g"
 
 ###
 ### Nextcloud
@@ -636,6 +694,10 @@ nextcloud_data_directory: "{{ docker_home }}/nextcloud"
 nextcloud_image: "nextcloud:14"
 nextcloud_port: "8080"
 nextcloud_subdomain: "nextcloud"
+nextcloud_restart_policy: "unless-stopped"
+nextcloud_memory_limit: "1g"
+nextcloud_mysql_restart_policy: "unless-stopped"
+nextcloud_mysql_memory_limit: "1g"
 
 ###
 ### nginx
@@ -644,6 +706,8 @@ nginx_data_directory: "{{ docker_home }}/nginx"
 nginx_image: "jwilder/nginx-proxy"
 nginx_port_http: "80"
 nginx_port_https: "443"
+nginx_restart_policy: "unless-stopped"
+nginx_memory_limit: "1g"
 
 ###
 ### Guacamole
@@ -654,6 +718,12 @@ guacamole_guacd_docker_image: guacamole/guacd:0.9.14
 guacamole_data_directory: "{{ docker_home }}/guacamole"
 guacamole_port: "8090"
 guacamole_subdomain: "guacamole"
+guacamole_restart_policy: "unless-stopped"
+guacamole_memory_limit: "1g"
+guacamole_mysql_restart_policy: "unless-stopped"
+guacamole_mysql_memory_limit: "1g"
+guacamole_guacd_restart_policy: "unless-stopped"
+guacamole_guacd_memory_limit: "1g"
 
 ###
 ### Miniflux
@@ -665,6 +735,10 @@ miniflux_admin_password: supersecure
 miniflux_image: "miniflux/miniflux:latest"
 miniflux_port: "8070"
 miniflux_subdomain: "miniflux"
+miniflux_restart_policy: "unless-stopped"
+miniflux_memory_limit: "1g"
+miniflux_postgres_restart_policy: "unless-stopped"
+miniflux_postgres_memory_limit: "1g"
 
 ###
 ### Airsonic
@@ -674,6 +748,8 @@ airsonic_data_directory: "{{ docker_home }}/airsonic"
 airsonic_image: "airsonic/airsonic:latest"
 airsonic_port: "4040"
 airsonic_subdomain: "airsonic"
+airsonic_restart_policy: "unless-stopped"
+airsonic_memory_limit: "1g"
 
 ###
 ### CloudCmd
@@ -686,11 +762,15 @@ cloudcmd_group_id: "0"
 cloudcmd_image: "coderaiser/cloudcmd"
 cloudcmd_port: "7373"
 cloudcmd_subdomain: "cloudcmd"
+cloudcmd_restart_policy: "unless-stopped"
+cloudcmd_memory_limit: "1g"
 
 ###
 ### Watchtower
 ###
 watchtower_image: "v2tec/watchtower"
+watchtower_restart_policy: "unless-stopped"
+watchtower_memory_limit: "1g"
 
 # Sets the 6 field cron schedule to use for checks and updates. This will check at 5am daily.
 watchtower_cron_schedule: 0 0 5 * * *
@@ -717,6 +797,9 @@ timemachine_share_name: Data
 timemachine_log_level: error
 timemachine_port: "10445"
 timemachine_image: "awlnx/samba-timemachine:latest"
+timemachine_restart_policy: "unless-stopped"
+timemachine_memory_limit: "1g"
+timemachine_ulimits: "nofile:1048576:1048576"
 
 ###
 ### minidlna
@@ -726,6 +809,8 @@ minidlna_media_directory2: "{{ tv_root }}"
 minidlna_friendly_name: "{{ ansible_nas_hostname }}"
 minidlna_image: "vladgh/minidlna"
 minidlna_port: "8201"
+minidlna_restart_policy: "unless-stopped"
+minidlna_memory_limit: "1g"
 
 ###
 ### get_iplayer
@@ -736,6 +821,8 @@ get_iplayer_download_directory: "{{ tv_root }}/iplayer_downloads"
 get_iplayer_image: "kolonuk/get_iplayer"
 get_iplayer_subdomain: "get_iplayer"
 get_iplayer_port: "8182"
+get_iplayer_restart_policy: "unless-stopped"
+get_iplayer_memory_limit: "1g"
 
 ###
 ### mymediaforalexa
@@ -743,6 +830,8 @@ get_iplayer_port: "8182"
 mymediaforalexa_media_directory: "{{ music_root }}"
 mymediaforalexa_data_directory: "{{ docker_home }}/mymediaforalexa"
 mymediaforalexa_image: "bizmodeller/mymediaforalexa"
+mymediaforalexa_restart_policy: "unless-stopped"
+mymediaforalexa_memory_limit: "1g"
 
 ###
 ### Jackett
@@ -752,6 +841,8 @@ jackett_data_directory: "{{ docker_home }}/jackett"
 jackett_image: "linuxserver/jackett"
 jackett_port: "9117"
 jackett_subdomain: "jackett"
+jackett_restart_policy: "unless-stopped"
+jackett_memory_limit: "1g"
 
 ###
 ### The Lounge
@@ -762,6 +853,8 @@ thelounge_image: "thelounge/thelounge:latest"
 thelounge_port_one: "113"
 thelounge_port_two: "9002"
 thelounge_subdomain: "thelounge"
+thelounge_restart_policy: "unless-stopped"
+thelounge_memory_limit: "1g"
 
 ###
 ### Bitwarden
@@ -773,6 +866,10 @@ bitwarden_backup_image: "bruceforce/bw_backup:latest"
 bitwarden_port_a: "19080"
 bitwarden_port_b: "3012"
 bitwarden_subdomain: "bitwarden"
+bitwarden_restart_policy: "unless-stopped"
+bitwarden_memory_limit: "1g"
+bitwarden_backup_restart_policy: "unless-stopped"
+bitwarden_backup_memory_limit: "1g"
 
 # Keep this token secret, this is password to access admin area of your server!
 # This token can be anything, but it's recommended to use a long, randomly generated string of characters,
@@ -792,6 +889,10 @@ firefly_data_directory: "{{ docker_home }}/firefly"
 firefly_image: "jc5x/firefly-iii:latest"
 firefly_port: "8066"
 firefly_subdomain: "firefly"
+firefly_restart_policy: "unless-stopped"
+firefly_memory_limit: "1g"
+firefly_mysql_restart_policy: "unless-stopped"
+firefly_mysql_memory_limit: "1g"
 
 ###
 ### Nzbget
@@ -804,6 +905,8 @@ nzbget_group_id: "0"
 nzbget_image: "linuxserver/nzbget"
 nzbget_port: "6789"
 nzbget_subdomain: "nzbget"
+nzbget_restart_policy: "unless-stopped"
+nzbget_memory_limit: "1g"
 
 ###
 ### Wallabag
@@ -813,6 +916,8 @@ wallabag_data_directory: "{{ docker_home }}/wallabag"
 wallabag_image: "wallabag/wallabag:latest"
 wallabag_port: "7780"
 wallabag_subdomain: "wallabag"
+wallabag_restart_policy: "unless-stopped"
+wallabag_memory_limit: "1g"
 
 ###
 ### Mosquitto
@@ -822,6 +927,8 @@ mosquitto_data_directory: "{{ docker_home }}/mosquitto"
 mosquitto_image: "eclipse-mosquitto:latest"
 mosquitto_port_a: "1883"
 mosquitto_port_b: "9001"
+mosquitto_restart_policy: "unless-stopped"
+mosquitto_memory_limit: "1g"
 
 ###
 ### Calibre
@@ -833,6 +940,8 @@ calibre_user_id: "0"
 calibre_group_id: "0"
 calibre_port: "8084"
 calibre_subdomain: "calibre"
+calibre_restart_policy: "unless-stopped"
+calibre_memory_limit: "1g"
 # To disable ebook conversion set calibre_ebook_conversion to "". To enable it set it to "linuxserver/calibre-web:calibre"
 calibre_ebook_conversion: "linuxserver/calibre-web:calibre"
 
@@ -844,6 +953,8 @@ homeassistant_data_directory: "{{ docker_home }}/homeassistant"
 homeassistant_image: "homeassistant/home-assistant"
 homeassistant_port: "8123"
 homeassistant_subdomain: "homeassistant"
+homeassistant_restart_policy: "unless-stopped"
+homeassistant_memory_limit: "1g"
 
 ###
 ### openHAB
@@ -854,6 +965,8 @@ openhab_data_directory: "{{ docker_home }}/openhab"
 openhab_port_http: "7777"
 openhab_port_https: "7778"
 openhab_subdomain: "openhab"
+openhab_restart_policy: "unless-stopped"
+openhab_memory_limit: "1g"
 
 ###
 ### Jellyfin
@@ -872,6 +985,8 @@ jellyfin_image: "linuxserver/jellyfin"
 jellyfin_port_http: "8896"
 jellyfin_port_https: "8928"
 jellyfin_subdomain: "jellyfin"
+jellyfin_restart_policy: "unless-stopped"
+jellyfin_memory_limit: "1g"
 
 ###
 ### Ubooquity
@@ -884,3 +999,5 @@ ubooquity_image: "linuxserver/ubooquity:latest"
 ubooquity_port_a: "2202"
 ubooquity_port_b: "2203"
 ubooquity_subdomain: "ubooquity"
+ubooquity_restart_policy: "unless-stopped"
+ubooquity_max_mem: "1024" #This is an environment variable in MB

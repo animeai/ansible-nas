@@ -24,8 +24,8 @@
       TZ: "{{ ansible_nas_timezone }}"
       PUID: "{{ plex_user_id }}"
       PGID: "{{ plex_group_id }}"
-    restart_policy: unless-stopped
-    memory: 1g
+    restart_policy: "{{ plex_restart_policy }}}"
+    memory: "{{ plex_memory_limit }}"
     labels:
       traefik.backend: "plex"
       traefik.frontend.rule: "Host:{{ plex_subdomain }}.{{ ansible_nas_domain }}"
