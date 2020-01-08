@@ -495,6 +495,8 @@ duplicati_port: "8200"
 duplicati_subdomain: "duplicati"
 duplicati_restart_policy: "unless-stopped"
 duplicati_memory_limit: "1g"
+duplicati_user_id: "0"
+duplicati_group_id: "0"
 
 ###
 ### Sonarr

@@ -15,11 +15,15 @@
       - "{{ duplicati_port }}:8200"
     volumes:
       - "{{ duplicati_data_directory }}:/config:rw"
-      - "{{ samba_shares_root }}:/source/shares:ro"
+      - "{{ samba_shares_root }}:/source/shares:rw"
       - "{{ docker_home }}:/source/docker:ro"
       - "/etc/timezone:/etc/timezone:ro"
     restart_policy: "{{ duplicati_restart_policy }}"
     memory: "{{ duplicati_memory_limit }}"
+    env:
+      TZ: "{{ ansible_nas_timezone }}"
+      PUID: "{{ duplicati_user_id }}"
+      PGID: "{{ duplicati_group_id }}"
     labels:
       traefik.backend: "duplicati"
       traefik.frontend.rule: "Host:{{ duplicati_subdomain }}.{{ ansible_nas_domain }}"
