@@ -750,6 +750,8 @@ airsonic_port: "4040"
 airsonic_subdomain: "airsonic"
 airsonic_restart_policy: "unless-stopped"
 airsonic_memory_limit: "1g"
+airsonic_music_directory: "{{ music_root }}"
+airsonic_podcasts_directory: "{{ podcasts_root }}"
 
 ###
 ### CloudCmd
@@ -843,6 +845,7 @@ jackett_port: "9117"
 jackett_subdomain: "jackett"
 jackett_restart_policy: "unless-stopped"
 jackett_memory_limit: "1g"
+jacket_torrents_root: "{{ torrents_root }}"
 
 ###
 ### The Lounge
@@ -942,6 +945,7 @@ calibre_port: "8084"
 calibre_subdomain: "calibre"
 calibre_restart_policy: "unless-stopped"
 calibre_memory_limit: "1g"
+calibre_books_root: "{{ books_root }}"
 # To disable ebook conversion set calibre_ebook_conversion to "". To enable it set it to "linuxserver/calibre-web:calibre"
 calibre_ebook_conversion: "linuxserver/calibre-web:calibre"
 
