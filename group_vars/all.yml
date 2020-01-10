@@ -423,10 +423,6 @@ pyload_port: "8000"
 pyload_subdomain: "pyload"
 pyload_restart_policy: "unless-stopped"
 pyload_memory_limit: "1g"
-pyload_subdomain: "pyload"
-pyload_restart_policy: "unless-stopped"
-pyload_memory_limit: "1g"
-pyload_port: "8000"
 
 ###
 ### Plex
