@@ -301,7 +301,6 @@ cloudflare_image: "joshava/cloudflare-ddns:latest"
 cloudflare_restart_policy: "unless-stopped"
 cloudflare_memory_limit: "512MB"
 
-
 ###
 ### General
 ###
@@ -425,6 +424,8 @@ pyload_subdomain: "pyload"
 pyload_restart_policy: "unless-stopped"
 pyload_memory_limit: "1g"
 pyload_subdomain: "pyload"
+pyload_restart_policy: "unless-stopped"
+pyload_memory_limit: "1g"
 
 ###
 ### Plex
