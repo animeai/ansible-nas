@@ -24,6 +24,7 @@ pyload_enabled: false
 # Media Serving
 plex_enabled: false
 tautulli_enabled: false
+photoshow_enabled: false
 
 # Media Sourcing
 sonarr_enabled: false         # tv
