@@ -732,3 +732,17 @@ ubooquity_available_externally: "false"
 ubooquity_data_directory: "{{ docker_home }}/ubooquity"
 ubooquity_user_id: "0"
 ubooquity_group_id: "0"
+
+###
+### Photoshow
+###
+photoshow_available_externally: "false"
+photoshow_data_directory: "{{ docker_home }}/photoshow"
+photoshow_image: "linuxserver/photoshow"
+photoshow_port: "12455"
+photoshow_user_id: "0"
+photoshow_group_id: "0"
+photoshow_restart_policy: "unless-stopped"
+photoshow_memory_limit:  "1g"
+photoshow_subdomain: "photoshow"
+photoshow_photos_directory: "{{ photos_root }}"
