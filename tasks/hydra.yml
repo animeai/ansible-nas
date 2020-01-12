@@ -1,0 +1,29 @@
+--
+- name: "Create hydra Directories"
+  file:
+    path: "{{ item }}"
+    state: "directory"
+  with_items:
+    - "{{ hydra_data_directory }}"
+
+- name: "hydra Docker Container"
+  docker_container:
+    name: "hydra"
+    image: "{{ hydra_image }}"
+    pull: "true"
+    volumes:
+      - "{{ hydra_data_directory }}:/config"
+      - "{{ hyrda_downloads_directory }}:/downloads"
+   ports:
+      - "{{ hydra_port }}:5076"
+    env:
+      TZ: "{{ ansible_nas_timezone }}"
+      PUID: "{{ hydra_user_id }}"
+      PGID: "{{ hydra_group_id }}"
+    restart_policy: "{{ hydra_restart_policy }}"
+    memory: "{{ hydra_memory_limit }}"
+    labels:
+      traefik.backend: "hydra"
+      traefik.frontend.rule: "Host:{{ hydra_subdomain }}.{{ ansible_nas_domain }}"
+      traefik.enable: "{{ hydra_available_externally }}"
+      traefik.port: "{{ hydra_port }}"
