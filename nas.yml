@@ -219,3 +219,7 @@
   - import_tasks: tasks/hydra.yml
     when: (hydra_enabled | default(False))
     tags: hydra
+
+  - import_tasks: tasks/photoshow.yml
+    when: (photoshow_enabled | default(False))
+    tags: photoshow

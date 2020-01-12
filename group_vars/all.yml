@@ -25,6 +25,7 @@ hydra_enabled: false
 # Media Serving
 plex_enabled: false
 tautulli_enabled: false
+photoshow_enabled: false
 
 # Media Sourcing
 sonarr_enabled: false         # tv
@@ -1031,3 +1032,17 @@ hydra_group_id: "0"
 hydra_restart_policy: "unless-stopped"
 hydra_memory_limit:  "1g"
 hydra_subdomain: "hydra"
+
+###
+### Photoshow
+###
+photoshow_available_externally: "false"
+photoshow_data_directory: "{{ docker_home }}/photoshow"
+photoshow_image: "linuxserver/photoshow"
+photoshow_port: "12455"
+photoshow_user_id: "0"
+photoshow_group_id: "0"
+photoshow_restart_policy: "unless-stopped"
+photoshow_memory_limit:  "1g"
+photoshow_subdomain: "photoshow"
+photoshow_photos_directory: "{{ photos_root }}"

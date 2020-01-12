@@ -1,0 +1,32 @@
+--
+- name: "Create photoshow Directories"
+  file:
+    path: "{{ item }}"
+    state: "directory"
+  with_items:
+    - "{{ photoshow_data_directory }}"
+    - "{{ photoshow_data_directory }}/config"
+    - "{{ photoshow_data_directory }}/thumbs"
+
+- name: "photoshow Docker Container"
+  docker_container:
+    name: "photoshow"
+    image: "{{ photoshow_image }}"
+    pull: "true"
+    volumes:
+      - "{{ photoshow_data_directory }}/config:/config:rw"
+      - "{{ photoshow_data_directory }}/thumbs:/thumbs:rw"
+      - "{{ photoshow_photos_directory }}:/Pictures:ro"
+   ports:
+      - "{{ photoshow_port }}:80"
+    env:
+      TZ: "{{ ansible_nas_timezone }}"
+      PUID: "{{ photoshow_user_id }}"
+      PGID: "{{ photoshow_group_id }}"
+    restart_policy: "{{ photoshow_restart_policy }}"
+    memory: "{{ photoshow_memory_limit }}"
+    labels:
+      traefik.backend: "photoshow"
+      traefik.frontend.rule: "Host:{{ photoshow_subdomain }}.{{ ansible_nas_domain }}"
+      traefik.enable: "{{ photoshow_available_externally }}"
+      traefik.port: "{{ photoshow_port }}"
