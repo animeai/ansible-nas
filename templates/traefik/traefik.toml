@@ -196,6 +196,7 @@ onDemand = false # create certificate when container is created
           "{{ heimdall_subdomain }}.{{ ansible_nas_domain }}",
           "{{ homeassistant_subdomain }}.{{ ansible_nas_domain }}",
 		  "{{ homebridge_subdomain }}.{{ ansible_nas_domain }}",
+		  "{{ hydra_subdomain }}.{{ ansible_nas_domain }}",
           "{{ jackett_subdomain }}.{{ ansible_nas_domain }}",
           "{{ jellyfin_subdomain }}.{{ ansible_nas_domain }}",
           "{{ joomla_subdomain }}.{{ ansible_nas_domain }}",

@@ -20,6 +20,7 @@ transmission_with_openvpn_enabled: false # Please see docs about how to set VPN 
 transmission_enabled: false
 nzbget_enabled: false
 pyload_enabled: false
+hydra_enabled: false
 
 # Media Serving
 plex_enabled: false
@@ -1016,3 +1017,17 @@ ubooquity_port_b: "2203"
 ubooquity_subdomain: "ubooquity"
 ubooquity_restart_policy: "unless-stopped"
 ubooquity_max_mem: "1024" #This is an environment variable in MB
+
+###
+### Hydra
+###
+hydra_available_externally: "false"
+hydra_data_directory: "{{ docker_home }}/hydra"
+hydra_downloads_directory: "{{ downloads_root }}" 
+hydra_image: "linuxserver/hydra2"
+hydra_port: "5076"
+hydra_user_id: "0"
+hydra_group_id: "0"
+hydra_restart_policy: "unless-stopped"
+hydra_memory_limit:  "1g"
+hydra_subdomain: "hydra"

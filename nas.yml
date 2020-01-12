@@ -215,3 +215,7 @@
   - import_tasks: tasks/lidarr.yml
     when: (lidarr_enabled | default(False))
     tags: lidarr
+
+  - import_tasks: tasks/hydra.yml
+    when: (hydra_enabled | default(False))
+    tags: hydra
