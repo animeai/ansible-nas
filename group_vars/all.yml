@@ -1020,6 +1020,8 @@ ubooquity_port_b: "2203"
 ubooquity_subdomain: "ubooquity"
 ubooquity_restart_policy: "unless-stopped"
 ubooquity_max_mem: "1024" #This is an environment variable in MB
+ubooquity_port_webui: "2202"
+ubooquity_port_admin: "2203"
 
 ###
 ### Hydra
@@ -1048,3 +1050,5 @@ photoshow_restart_policy: "unless-stopped"
 photoshow_memory_limit:  "1g"
 photoshow_subdomain: "photoshow"
 photoshow_photos_directory: "{{ photos_root }}"
+
+

@@ -22,6 +22,6 @@
       traefik.backend: "homeassistant"
       traefik.frontend.rule: "Host:{{ homeassistant_subdomain }}.{{ ansible_nas_domain }}"
       traefik.enable: "{{ homeassistant_available_externally }}"
-      traefik.port: "{{ homeassistant_port }}"
+      traefik.port: "8123"
       traefik.frontend.headers.SSLRedirect: "true"
     memory: "{{ homeassistant_memory_limit }}"

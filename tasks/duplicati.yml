@@ -28,4 +28,4 @@
       traefik.backend: "duplicati"
       traefik.frontend.rule: "Host:{{ duplicati_subdomain }}.{{ ansible_nas_domain }}"
       traefik.enable: "{{ duplicati_available_externally }}"
-      traefik.port: "{{ duplicati_port }}"
+      traefik.port: "8200"
