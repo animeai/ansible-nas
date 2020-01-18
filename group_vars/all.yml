@@ -860,7 +860,7 @@ jackett_port: "9117"
 jackett_subdomain: "jackett"
 jackett_restart_policy: "unless-stopped"
 jackett_memory_limit: "1g"
-jacket_torrents_root: "{{ torrents_root }}"
+jackett_torrents_root: "{{ torrents_root }}"
 
 ###
 ### The Lounge
