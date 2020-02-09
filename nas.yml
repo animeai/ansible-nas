@@ -20,6 +20,10 @@
       tags:
         - docker
         - skip_ansible_lint
+    - role: dev-sec.ssh-hardening
+      tags:
+        - ssh-hardening
+        - skip_ansible_lint
 
   tasks:
   - import_tasks: tasks/general.yml

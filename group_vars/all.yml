@@ -95,8 +95,40 @@ ubooquity_enabled: false
 # Joomla
 joomla_enabled: false
 
+
 # SEO
 serposcope_enabled: false
+
+###
+### Security
+###
+## Be aware: The security of your servers is YOUR responsibility. Simply tweaking these variables does NOT automatically make your server secure.
+## Read up on Linux, network, and application security, and know that no matter how much you know, you can always make every part of your stack more secure.
+## Important: Incorrectly editing these values could easily lock you out of your own server. Edit at your own risk and always research settings before editing!
+ssh_challengeresponseauthentication: "false" #Set to true to use the options below
+ssh_server_hardening: "true" #Set to false to skip sshd server hardening
+ssh_client_hardening: "true" #Set to false to skil ssh client hardening
+network_ipv6_enable: "false"
+ssh_port: "22"
+ssh_permit_root_login: "no" # Set this to "without-password" or "yes" to allow root to login
+ssh_allow_tcp_forwarding: "no"
+ssh_allow_agent_forwarding: "false"
+ssh_pam_support: "true"
+ssh_use_pam: "true"
+ssh_kerberos_support: "no"
+ssh_deny_ansible_nas_user: "true"
+ssh_print_motd: "true"
+ssh_print_last_login: "true"
+ssh_sftp_enabled: "false"
+ssh_client_password_login: "true"
+ssh_server_password_login: "true"
+ssh_max_auth_retries: "2"
+ssh_server_enabled: "true"
+ssh_permit_tunnel: "false"
+ssh_allow_tcp_forwarding: "no"
+sshd_authenticationmethods: "keyboard-interactive password publickey"
+ssh_print_debian_banner: "false" # false to disable distribution version leakage during initial protocol handshake
+ssh_challengeresponseauthentication: "no"
 
 # External Access
 # Traefik will allow access to certain applications externally. To enable this you'll either; a domain name that points to your 
