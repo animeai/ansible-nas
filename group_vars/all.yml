@@ -58,6 +58,7 @@ netdata_enabled: false
 watchtower_enabled: false
 cloudflare_ddns_enabled: false
 cloudcmd_enabled: false
+virtual_desktop_enabled: false
 
 # Backup & Restore
 duplicati_enabled: false
@@ -66,6 +67,7 @@ timemachine_enabled: false
 
 # Software build and CI
 gitea_enabled: false
+gitlab_enabled: false
 
 # IRC
 znc_enabled: false
@@ -694,6 +696,15 @@ gitea_mysql_restart_policy: "unless-stopped"
 gitea_mysql_memory_limit: "1g"
 
 ###
+### Gitlab
+###
+gitlab_available_externally: "false"
+gitlab_data_directory: "{{ docker_home }}/gitlab"
+gitlab_port_http: "4080"
+gitlab_port_https: "4443"
+gitlab_port_ssh: "422"
+
+###
 ### Glances
 ###
 glances_available_externally: "false"
@@ -768,6 +779,9 @@ airsonic_restart_policy: "unless-stopped"
 airsonic_memory_limit: "1g"
 airsonic_music_directory: "{{ music_root }}"
 airsonic_podcasts_directory: "{{ podcasts_root }}"
+airsonic_music_directory: "{{ music_root }}"
+airsonic_podcasts_directory: "{{ podcasts_root }}"
+airsonic_port: "4040"
 
 ###
 ### CloudCmd
@@ -862,6 +876,7 @@ jackett_subdomain: "jackett"
 jackett_restart_policy: "unless-stopped"
 jackett_memory_limit: "1g"
 jackett_torrents_root: "{{ torrents_root }}"
+jackett_port: "9117"
 
 ###
 ### The Lounge
@@ -962,6 +977,8 @@ calibre_subdomain: "calibre"
 calibre_restart_policy: "unless-stopped"
 calibre_memory_limit: "1g"
 calibre_books_root: "{{ books_root }}"
+calibre_books_root: "{{ books_root }}"
+calibre_port: "8084"
 # To disable ebook conversion set calibre_ebook_conversion to "". To enable it set it to "linuxserver/calibre-web:calibre"
 calibre_ebook_conversion: "linuxserver/calibre-web:calibre"
 
@@ -1058,3 +1075,14 @@ photoshow_photos_directory: "{{ photos_root }}"
 serposcope_data_directory: "{{ docker_home }}/serposcope"
 serposcope_port: 7134
 serposcope_available_externally: "false"
+
+###
+### Virtual Desktop
+###
+vd_data_directory: "{{ docker_home }}/virtual_desktop"
+vd_docker_image: "rattydave/docker-ubuntu-xrdp-mate-custom:19.10-tools"
+vd_users:
+  - username: "{{ ansible_nas_user }}"
+    password: "topsecret"
+    sudo: "Y"
+vd_rdp_port: 3389
