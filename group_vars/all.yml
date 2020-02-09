@@ -395,6 +395,7 @@ transmission_openvpn_local_network: "192.168.1.0/24"
 transmission_openvpn_image: "haugene/transmission-openvpn"
 transmission_openvpn_webui_port: "9093"
 transmission_openvpn_external_port: "51415"
+transmission_openvpn_image: "haugene/transmission-openvpn"
 transmission_openvpn_subdomain: "transmission-openvpn"
 transmission_openvpn_restart_policy: "unless-stopped"
 transmission_openvpn_memory_limit: "1g"
@@ -779,8 +780,6 @@ airsonic_restart_policy: "unless-stopped"
 airsonic_memory_limit: "1g"
 airsonic_music_directory: "{{ music_root }}"
 airsonic_podcasts_directory: "{{ podcasts_root }}"
-airsonic_music_directory: "{{ music_root }}"
-airsonic_podcasts_directory: "{{ podcasts_root }}"
 airsonic_port: "4040"
 
 ###
@@ -855,6 +854,7 @@ get_iplayer_subdomain: "get_iplayer"
 get_iplayer_port: "8182"
 get_iplayer_restart_policy: "unless-stopped"
 get_iplayer_memory_limit: "1g"
+get_iplayer_port: "8182"
 
 ###
 ### mymediaforalexa
