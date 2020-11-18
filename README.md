@@ -25,7 +25,7 @@ Ansible config and a bunch of Docker containers.
 * A Docker host with Portainer for image and container management
 * An automatic dynamic DNS updater if you use Cloudflare to host your domain DNS
 * A Personal finance manager
-* eBook management with calibre-web
+* eBook management with Calibre-web
 * Content management with Joomla
 * A dual panel local file manager
 * Self-service media request web application
@@ -36,7 +36,7 @@ Ansible config and a bunch of Docker containers.
 * [Airsonic](https://airsonic.github.io/) - catalog and stream music
 * [Bazarr](https://github.com/morpheus65535/bazarr) - companion to Radarr and Sonarr for downloading subtitles
 * [Bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) - Self-Hosting port of password manager
-* [Calibre](https://hub.docker.com/r/linuxserver/calibre-web) - eBook Library
+* [Calibre-web](https://github.com/janeczku/calibre-web) - Provides a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.
 * [Cloud Commander](https://cloudcmd.io/) - A dual panel file manager with integrated web console and text editor
 * [Cloudflare DDNS](https://hub.docker.com/r/joshuaavalon/cloudflare-ddns/) - automatically update Cloudflare with your IP address
 * [CouchPotato](https://couchpota.to/) - for downloading and managing movies
@@ -55,19 +55,23 @@ Ansible config and a bunch of Docker containers.
 * [Jackett](https://github.com/Jackett/Jackett) - API Support for your favorite torrent trackers
 * [Jellyfin](https://jellyfin.github.io) - The Free Software Media System
 * [Joomla](https://www.joomla.org/) - Open source content management system
+* [Krusader](https://krusader.org/) - Twin panel file management for your desktop
 * [Lidarr](https://github.com/lidarr/Lidarr) - Music collection manager for Usenet and BitTorrent users
-* [MiniDlna](https://sourceforge.net/projects/minidlna/) - simple media server which is fully compliant with DLNA/UPnP-AV clients
+* [MiniDLNA](https://sourceforge.net/projects/minidlna/) - simple media server which is fully compliant with DLNA/UPnP-AV clients
 * [Miniflux](https://miniflux.app/) - An RSS news reader
 * [Mosquitto](https://mosquitto.org) - An open source MQTT broker
+* [Mylar](https://github.com/evilhero/mylar) - An automated Comic Book downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents
 * [MyMediaForAlexa](https://www.mymediaalexa.com/) - Lets you stream your music collection to your alexa device
 * [Netdata](https://my-netdata.io/) - An extremely comprehensive system monitoring solution
 * [Nextcloud](https://nextcloud.com/) - A self-hosted Dropbox alternative
 * [NZBget](https://nzbget.net/) - The most efficient usenet downloader
 * [Ombi](https://ombi.io/) - web application that automatically gives your users the ability to request content
+* [Organizr](https://organizr.app/) - ORGANIZR aims to be your one stop shop for your Servers Frontend.
 * [openHAB](https://www.openhab.org/) - A vendor and technology agnostic open source automation software for your home
 * [Plex](https://www.plex.tv/) - Plex Media Server
 * [Portainer](https://portainer.io/) - for managing Docker and running custom images
 * [pyLoad](https://pyload.net/) - A download manager with a friendly web-interface
+* [PyTivo](http://pytivo.org) - An HMO and GoBack server for TiVos.
 * [Radarr](https://radarr.video/) - for organising and downloading movies
 * [Serposcope](https://serposcope.serphacker.com/en/) - tracker to monitor website ranking
 * [Sickchill](https://sickchill.github.io/) - for managing TV episodes
@@ -79,9 +83,11 @@ Ansible config and a bunch of Docker containers.
 * [Traefik](https://traefik.io/) - Web proxy and SSL certificate manager
 * [Transmission](https://transmissionbt.com/) - BitTorrent client (with OpenVPN if you have a supported VPN provider)
 * [Ubooquity](http://vaemendis.net/ubooquity/) - Book and comic server
+* [uTorrent](https://www.utorrent.com/) - The best torrent downloading app for beginners
 * [Virtual Desktop](https://github.com/RattyDAVE/docker-ubuntu-xrdp-mate-custom) - A virtual desktop running on your NAS.
 * [Wallabag](https://wallabag.org/) - Save and classify articles. Read them later.
 * [Watchtower](https://github.com/v2tec/watchtower) - Monitor your Docker containers and update them if a new version is available
+* [YouTubeDL-Material](https://github.com/Tzahi12345/YoutubeDL-Material) - Self-hosted YouTube downloader built on Material Design
 * [ZNC](https://wiki.znc.in/ZNC) - IRC bouncer to stay connected to favourite IRC networks and channels
 
 ## What This Could Do
