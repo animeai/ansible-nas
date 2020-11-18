@@ -1,11 +1,11 @@
-- name: Create Calibre Directories
+- name: Create Calibre-web Directories
   file:
     path: "{{ item }}"
     state: directory
   with_items:
     - "{{ calibre_data_directory }}/config"
 
-- name: Calibre Docker Container
+- name: Calibre-web Docker Container
   docker_container:
     name: calibre
     image: "{{ calibre_image }}"
@@ -27,3 +27,4 @@
       traefik.enable: "{{ calibre_available_externally }}"
       traefik.port: "8083"
     memory: "{{ calibre_memory_limit }}"
+

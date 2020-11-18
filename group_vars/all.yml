@@ -21,6 +21,7 @@ transmission_enabled: false
 nzbget_enabled: false
 pyload_enabled: false
 hydra_enabled: false
+utorrent_enabled: false
 
 # Media Serving
 plex_enabled: false
@@ -40,6 +41,8 @@ emby_enabled: false
 bazarr_enabled: false
 ombi_enabled: false
 lidarr_enabled: false
+youtubedlmaterial_enabled: false
+mylar_enabled: false
 
 # Music
 airsonic_enabled: false
@@ -50,6 +53,7 @@ miniflux_enabled: false
 
 # System Management
 heimdall_enabled: false
+organizr_enabled: false
 portainer_enabled: false
 glances_enabled: false
 stats_enabled: false
@@ -59,6 +63,7 @@ watchtower_enabled: false
 cloudflare_ddns_enabled: false
 cloudcmd_enabled: false
 virtual_desktop_enabled: false
+krusader_enabled: false
 
 # Backup & Restore
 duplicati_enabled: false
@@ -96,6 +101,9 @@ ubooquity_enabled: false
 
 # Joomla
 joomla_enabled: false
+
+# PyTivo
+pytivo_enabled: false
 
 # SEO
 serposcope_enabled: false
@@ -173,7 +181,7 @@ podcasts_root: "{{ samba_shares_root }}/podcasts"
 # Where your books are stored
 books_root: "{{ samba_shares_root }}/books"
 
-# Where your books are stored
+# Where your comics are stored
 comics_root: "{{ samba_shares_root }}/comics"
 
 # Where photos are stored
@@ -366,6 +374,16 @@ heimdall_restart_policy: "unless-stopped"
 heimdall_memory_limit: "1g"
 
 ###
+### Organizr
+###
+organizr_available_externally: "false"
+organizr_data_directory: "{{ docker_home }}/organizr"
+organizr_port_http: "10081"
+organizr_port_https: "10444"
+organizr_user_id: "1000"
+organizr_group_id: "1000"
+
+###
 ### Transmission
 ###
 transmission_available_externally: "false"
@@ -399,14 +417,30 @@ transmission_openvpn_image: "haugene/transmission-openvpn"
 transmission_openvpn_subdomain: "transmission-openvpn"
 transmission_openvpn_restart_policy: "unless-stopped"
 transmission_openvpn_memory_limit: "1g"
+transmission_openvpn_webui_port: "9091"
+transmission_openvpn_external_port: "51415"
+transmission_openvpn_proxy_port: "3128"
+transmission_openvpn_ratio_limit_enabled: "true"
+transmission_openvpn_ratio_limit: "2"
 
 # Transmission VPN Credentials
 # If you're using Transmission with a VPN, you'll need to set these credentials.
-# See https://hub.docker.com/r/dceschmidt/openvpn-client/ for supported VPN providers.
+# See https://github.com/haugene/docker-transmission-openvpn/ for supported VPN providers.
 openvpn_username: leisure-suit-larry
 openvpn_password: secretpassword
 openvpn_provider: AWESOMEVPNPROVIDER
 openvpn_config: United-Kingdom
+
+###
+### uTorrent
+###
+utorrent_available_externally: "false"
+utorrent_config_directory: "{{ docker_home }}/utorrent/config"
+utorrent_download_directory: "{{ downloads_root }}"
+utorrent_port_http: "8111"
+utorrent_port_bt: "6881"
+utorrent_user_id: "0"
+utorrent_group_id: "0"
 
 ###
 ### Joomla
@@ -448,6 +482,8 @@ plex_tv_directory: "{{ tv_root }}"
 plex_tv_permissions: "rw"
 plex_photos_directory: "{{ photos_root }}"
 plex_photos_permissions: "rw"
+plex_podcasts_directory: "{{ podcasts_root }}"
+plex_podcasts_permissions: "rw"
 plex_music_directory: "{{ music_root }}"
 plex_music_permissions: "rw"
 plex_user_id: "0"
@@ -457,6 +493,19 @@ plex_port: "32400"
 plex_subdomain: "plex"
 plex_restart_policy: "unless-stopped"
 plex_memory_limit: "1g"
+
+###
+### PyTivo
+###
+pytivo_available_externally: "false"
+pytivo_config_directory: "{{ docker_home }}/pytivo/config"
+pytivo_movies_directory: "{{ movies_root }}"
+pytivo_tv_directory: "{{ tv_root }}"
+pytivo_photos_directory: "{{ photos_root }}"
+pytivo_music_directory: "{{ music_root }}"
+pytivo_podcasts_directory: "{{ podcasts_root }}"
+pytivo_user_id: "0"
+pytivo_group_id: "0"
 
 ###
 ### Homebridge
@@ -519,6 +568,17 @@ duplicati_group_id: "0"
 duplicati_port: "8200"
 
 ###
+### Mylar
+###
+mylar_available_externally: "false"
+mylar_data_directory: "{{ docker_home }}/mylar"
+mylar_comics_directory: "{{ comics_root }}"
+mylar_downloads_directory: "{{ downloads_root }}"
+mylar_port_http: "8585"
+mylar_user_id: "0"
+mylar_group_id: "0"
+
+###
 ### Sonarr
 ###
 sonarr_available_externally: "false"
@@ -564,7 +624,7 @@ bazarr_restart_policy: "unless-stopped"
 bazarr_memory_limit: "1g"
 
 ###
-### lidarr
+### Lidarr
 ###
 lidarr_available_externally: "false"
 lidarr_data_directory: "{{ docker_home }}/lidarr/config"
@@ -577,6 +637,16 @@ lidarr_port: "8686"
 lidarr_subdomain: "lidarr"
 lidarr_restart_policy: "unless-stopped"
 lidarr_memory_limit: "1g"
+
+###
+### YouTubeDL-Material
+###
+youtubedlmaterial_available_externally: "false"
+youtubedlmaterial_data_directory: "{{ docker_home }}/youtubedlmaterial"
+youtubedlmaterial_dl_audio_directory: "{{ downloads_root }}/youtube/audio"
+youtubedlmaterial_dl_video_directory: "{{ downloads_root }}/youtube/video"
+youtubedlmaterial_dl_subscriptions_directory: "{{ downloads_root }}/youtube/subscriptions"
+youtubedlmaterial_port_http: "8998"
 
 ###
 ### Couchpotato
@@ -644,7 +714,7 @@ openvpn_memory_limit: "1g"
 ###
 portainer_available_externally: "false"
 portainer_data_directory: "{{ docker_home }}/portainer/config"
-portainer_image: "portainer/portainer"
+portainer_image: "portainer/portainer-ce"
 portainer_port: "9000"
 portainer_subdomain: "portainer"
 portainer_restart_policy: "unless-stopped"
@@ -798,6 +868,19 @@ cloudcmd_restart_policy: "unless-stopped"
 cloudcmd_memory_limit: "1g"
 
 ###
+### Krusader
+###
+krusader_available_externally: "false"
+krusader_config_directory: "{{ docker_home }}/krusader/config"
+krusader_browse_directory: "/"
+krusader_user_id: "0"
+krusader_group_id: "0"
+krusader_secure_connection: "0"
+krusader_vnc_password: "topsecret"
+krusader_port_http: "5800"
+krusader_port_vnc: "5900"
+
+###
 ### Watchtower
 ###
 watchtower_image: "v2tec/watchtower"
@@ -834,7 +917,7 @@ timemachine_memory_limit: "1g"
 timemachine_ulimits: "nofile:1048576:1048576"
 
 ###
-### minidlna
+### MiniDLNA
 ###
 minidlna_media_directory1: "{{ movies_root }}"
 minidlna_media_directory2: "{{ tv_root }}"
@@ -966,7 +1049,7 @@ mosquitto_restart_policy: "unless-stopped"
 mosquitto_memory_limit: "1g"
 
 ###
-### Calibre
+### Calibre-web
 ###
 calibre_available_externally: "false"
 calibre_data_directory: "{{ docker_home }}/calibre"
@@ -1015,6 +1098,10 @@ jellyfin_available_externally: "false"
 jellyfin_config_directory: "{{ docker_home }}/jellyfin/config"
 jellyfin_movies_directory: "{{ movies_root }}"
 jellyfin_movies_permissions: "rw"
+jellyfin_music_directory: "{{ music_root }}"
+jellyfin_music_permissions: "rw"
+jellyfin_photos_directory: "{{ photos_root }}"
+jellyfin_photos_permissions: "rw"
 jellyfin_tv_directory: "{{ tv_root }}"
 jellyfin_tv_permissions: "rw"
 jellyfin_user_id: "0"
@@ -1081,7 +1168,7 @@ serposcope_available_externally: "false"
 ### Virtual Desktop
 ###
 vd_data_directory: "{{ docker_home }}/virtual_desktop"
-vd_docker_image: "rattydave/docker-ubuntu-xrdp-mate-custom:19.10-tools"
+vd_docker_image: "rattydave/docker-ubuntu-xrdp-mate-custom:20.04-tools"
 vd_users:
   - username: "{{ ansible_nas_user }}"
     password: "topsecret"
